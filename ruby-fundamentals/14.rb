@@ -15,3 +15,18 @@
 # apartments you can jam into the building, and the total money made 
 # (assuming each apartment is worth $120,000) using the previous two methods.
 
+def floorspace(length, width)
+  length * width
+end
+
+def max_apartments(available_space)
+  (available_space % 28).to_i
+end
+
+def show_me_the_money(length, width, floors)
+  per_floor = max_apartments(floorspace(length, width))
+  total_floors = per_floor * floors
+  total_floors * 120000
+end
+
+puts show_me_the_money(100, 50, 10)
